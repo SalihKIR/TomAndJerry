@@ -88,13 +88,13 @@ class ViewController: UIViewController {
     func hidentom (){
         for tom in tomAndjerry{
             tom.isHidden = true
+            //Hiiden start.
         }
         let random = Int(arc4random_uniform(UInt32(tomAndjerry.count-1)))
         tomAndjerry[random].isHidden = false
         
     }
     @objc func timercount(){
-       
         counter -= 1
         timerLable.text = String(counter)
         if counter == 0 {
