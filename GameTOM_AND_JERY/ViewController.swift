@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        counter = 10
+        counter = 20
         timerLable.text = "30"
         scoreLable.text = "SCORE"
         highScoreLabel.text = "HIGH SCORE"
@@ -94,6 +94,7 @@ class ViewController: UIViewController {
         tomAndjerry[random].isHidden = false
         
     }
+    //Timer counter
     @objc func timercount(){
         counter -= 1
         timerLable.text = String(counter)
@@ -109,7 +110,7 @@ class ViewController: UIViewController {
             let okbutton =  UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
             let replayButton = UIAlertAction(title: "Replay", style: UIAlertAction.Style.default) { UIAlertAction in
                 self .score  = 0
-                self .counter  = 10
+                self .counter  = 20
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timercount), userInfo: nil, repeats: true)
                 self.socerTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.timertom), userInfo: nil, repeats: true)
             }
@@ -127,6 +128,7 @@ class ViewController: UIViewController {
         }
         let random = Int(arc4random_uniform(UInt32(tomAndjerry.count-1)))
         tomAndjerry[random].isHidden = false
+        
     }
 
 }
